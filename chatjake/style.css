@@ -1,0 +1,410 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+*{
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  text-rendering: optimizeLegibility;
+  font-family: 'Roboto', sans-serif,Arial, Helvetica;
+  transition: all 100ms ease-out;
+}
+
+html{
+  font-size: 83%;
+}
+
+:root{
+  --userMessageBackground: #015E4B;
+  --botMessageBackground:  #1C2D35;
+  --timeMessageColor: #95c2bd;
+  --headerInputColor:#252e33;
+  --backgroundColor: #0f1b22;
+  --placeholderColor: #707980;
+  --SendButtonColor:#02AF9C;
+  --titleTextColor: #f5eded;
+  --perfilColor1:#1573FE;
+  --perfilColor2:#030E1E;
+  --maxWidth: 590px;
+  --minHeight: 914;
+}
+
+#app{
+  margin: 0 auto;
+  width: 100%;
+  height: calc(100vh - 56px);
+  max-width: var(--maxWidth); 
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  box-shadow: 0px 0px 8px #000000b4;
+  background-color: var(--backgroundColor);
+  background-image: url(./assets/backgroundTexture.png);
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+header{
+  background-color: var(--headerInputColor);
+  box-shadow: 0px 5px 5px rgb(00,00,00,0.6);
+  width: 100%;
+  height: 60px;
+  padding: 7px 7px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 5px;
+  user-select: none;
+}
+figure{
+  position: relative;
+}
+
+.link-perfil{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+  text-decoration: none;
+}
+.link-perfil:active{
+  background-clip: text;
+  background-color: rgb(47, 66, 79);
+}
+
+.image-perfil{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-image: url(./assets/hacker.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+}
+.group-online{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+figcaption{
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: var(--titleTextColor);
+  text-transform: uppercase;
+  padding: 5px;
+}
+.group-online strong{
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--timeMessageColor);
+  text-align: center;
+}
+
+.options-icon{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.options-icon .material-symbols-outlined{
+  font-weight: bolder;
+  color: var(--titleTextColor);
+}
+.options-icon .material-symbols-outlined:hover{
+  color: #3bdb26;
+  cursor: pointer;
+}
+.options-menu ul{
+  list-style-type: none;
+}
+
+.options-menu{
+  display: none;
+  position: absolute;
+  right: 0px;
+  top: 30px;
+  background-color: var(--headerInputColor);
+  box-shadow: 
+  0px 0px 5px #000,
+  inset 0px 0px 10px #2a2c2e;
+  width: max-content;
+  padding: 5px;
+}
+.menu{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+.menu li{
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 6px;
+}
+.menu li:hover{
+  background-color: #1e2227;
+}
+
+.menu li a {
+  text-decoration:none;
+  color: var(--titleTextColor);
+}
+
+main{
+  width: 100%;
+  flex-grow: 1;
+  max-height: 77vh;
+  height: 100%;
+  box-shadow: inset 0px 0px 10px rgb(00,00,00,0.4);
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  flex-shrink: 0;
+  gap: 12px;
+  padding: 10px;
+  padding-top: 40px;
+  overflow-y: auto;
+}
+
+.group-message{
+  width: auto;
+  text-align: start;
+  padding: 10px;
+  height: auto;
+  max-width: 285px;
+}
+
+.group-message h3{
+  text-transform: capitalize;
+  font-weight: 600;
+  text-align:left;
+  display: inline-block;
+  font-size: 1rem;
+  margin-bottom: 7px;
+  user-select: none;
+}
+.group-message p{
+  font-size: 1rem;
+  line-height: 1.2rem;
+  color: var(--titleTextColor);
+}
+
+.group-message li{
+  font-size: 1rem;
+  color: var(--titleTextColor);
+  margin-left: 20px;
+}
+
+.group-message time{
+  display: block;
+  font-weight: bold;
+  font-size: 0.75rem;
+  margin-top: 5px;
+  text-align: right;
+  color: var(--timeMessageColor);
+  user-select: none;
+}
+
+#botMessage{
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  align-self: flex-start;
+  background-color: var(--botMessageBackground);
+}
+
+#botMessage h3::before{
+  content: "";
+  object-fit: cover;
+  object-position: center;
+  vertical-align: middle;
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  margin-right: 8px;
+  border-radius: 50%;
+  background-image: url(./assets/hacker.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#usuario h3::before{
+  content: " ";
+  vertical-align: 0;
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  margin-right: 8px;
+  border-radius: 50%;
+  background-color: #ffff00;
+}
+
+#usuario{
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  align-self: flex-end;
+  background-color: var(--userMessageBackground);
+}
+
+
+#usuario h3{
+  color: rgb(241, 255, 39);
+}
+
+.group-sendMessage{
+  background-color:var(--backgroundColor);
+  border-top: 1px solid var(--headerInputColor);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  height: 60px;
+  align-items: center;
+  gap: 5px;
+  padding: 10px;
+  user-select: none;
+ }
+
+ textarea{
+  width: 100%;
+  height: 40px;
+  padding: 10px;
+  white-space: pre-wrap;
+  border-radius: 20px;
+  font-size: 1rem;
+  border: none;
+  outline: none;
+  background-color: var(--headerInputColor);
+  color: var(--titleTextColor);
+  resize: none;
+  font-size: 1rem;
+}
+
+textarea::placeholder,
+textarea::-webkit-input-placeholder {
+    color: var(--placeholderColor);
+    font-weight: 500;
+    padding: 1px;
+}
+
+textarea::-webkit-scrollbar{
+  display: none;
+  background-color: #202124;
+  width: 20px;
+}
+
+button{
+  font-weight: bolder;
+  background-color: var(--SendButtonColor);
+  border-radius: 20%;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  font-size: 1rem;
+  padding: 5px 10px;
+  transition:  background-color 200ms ease-out;
+}
+button:hover{
+  background-color: rgb(4, 114, 141);
+}
+.material-symbols-outlined{
+  color: #fff;
+}
+
+a{
+  text-decoration: none;
+  color: #569fff;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0px 5px;
+
+}
+#app main a:hover{
+  background-color: #0b3744 ;
+}
+
+.emoji-button{
+  position: relative;
+  display: block;
+  background-color: var(--SendButtonColor);
+  width: 40px;
+  flex-shrink: 0;
+  cursor: pointer;
+  height: 35px;
+  border-radius: 50%;
+  font-size: .8rem;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+}
+.emoji-button:hover{
+  background-color: #14596e;
+}
+
+.keyboard-emojis{
+  display: none;
+  position: absolute;
+  bottom: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.486);
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  flex-direction: row;
+  justify-content: center;
+  max-height: 300px;
+  min-width: 250px;
+  flex-wrap: wrap;
+  overflow-x: auto;
+  gap: 5px;
+  max-height: 100px;
+}
+
+.emoji{
+  flex-basis: 30px;
+  text-align: center;
+  font-size: 1.3rem;
+  padding: 10px;
+}
+.emoji:hover{
+  background-color: #00c3ff7a;
+}
+
+@keyframes write {
+  from {
+    width: 0px;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.writing {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  animation-name: write;
+  animation-fill-mode: forwards;
+  animation-duration: 1.3s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: infinite;
+}
+
+audio{
+  background-color: var(--botMessageBackground);
+  max-width: 250px;
+  padding: 5px;
+}
