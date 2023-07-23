@@ -226,22 +226,6 @@ main{
   background-color: var(--botMessageBackground);
 }
 
-#botMessage h3::before{
-  content: "";
-  object-fit: cover;
-  object-position: center;
-  vertical-align: middle;
-  display: inline-block;
-  width: 30px;
-  height: 30px;
-  margin-right: 8px;
-  border-radius: 50%;
-  background-image: url(./assets/hacker.jpg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
 #usuario h3::before{
   content: " ";
   vertical-align: 0;
