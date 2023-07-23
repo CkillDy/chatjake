@@ -179,7 +179,7 @@ main{
 }
 
 .group-message{
-  animation: fadeIn 600ms ease-in-out;
+  animation: fadeIn 300ms ease-in-out;
   width: auto;
   text-align: start;
   padding: 10px;
