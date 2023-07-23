@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description"
+    content="Converse com Jake, o hacker de Duskwood! Entre no universo do jogo e descubra segredos incríveis enquanto interage com o personagem. Converse, pergunte e divirta-se no mundo de Duskwood.">
+  <title>JAKE 3.0 - Chat</title>
+  <meta name="author" content="CkillDy">
+  <meta name="keywords" content="Duskwood, Jake, chatbot, GPT-3.5, IA, conversação, Ckilldy">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+  <link rel="stylesheet" href="./style.css" type="text/css">
+  <link rel="shortcut icon" href="./assets/hacker.jpg" type="image/x-icon">
+
+
+</head>
+
+<body>
+  <div id="app">
+    <audio src=""></audio>
+    <header>
+      <figure title="Perfil do Jake">
+        <a target="_self" class="link-perfil" href="/chatperfil/index.html">
+          <div draggable="false" class="image-perfil"></div>
+          <div class="group-online">
+            <figcaption>Jake</figcaption>
+            <strong id="online" class="">online</strong>
+          </div>
+        </a>
+      </figure>
+
+      <div class="options-icon">
+        <span class="material-symbols-outlined"
+        id="menu">more_vert</span>
+        <div class="options-menu"id="listMenu">
+          <ul class="menu">
+            <li><a id="cleanChat" href="#">Limpar Chat</a></li>
+          </ul>
+        </div>
+      </div>
+
+    </header>
+   
+    <main id="chatArea">
+    
+    </main>
+    <form class="group-sendMessage" id="chatForm">
+      <span class="emoji-button" id="emoji-button">
+        <section class="keyboard-emojis" id="keyboard">
+        </section>
+        <span 
+        id="emoji"
+        class="material-symbols-outlined">
+          add_reaction
+          </span>
+      </span>
+      <textarea name="message" id="message" placeholder="Mensagem" aria-placeholder="Mensagem" value=""
+        maxlength="500"></textarea>
+      <button type="submit" title="Enviar Mensagem para Jake">
+        <span class="material-symbols-outlined">send</span>
+      </button>
+    </form>
+
+  </div>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script type="module" src="index.js"></script>
+</body>
+
+</html>
