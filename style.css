@@ -372,9 +372,11 @@ a{
   overflow-x: auto;
   gap: 5px;
   max-height: 100px;
+  border: 1px solid rgba(0, 121, 201, 0.623);
 }
 
 .emoji{
+  background-color: var(--backgroundColor);
   flex-basis: 30px;
   text-align: center;
   font-size: 1.3rem;
