@@ -179,11 +179,12 @@ main{
 }
 
 .group-message{
+  animation: fadeIn 600ms ease-in-out;
   width: auto;
   text-align: start;
   padding: 10px;
   height: auto;
-  max-width: 285px;
+  max-width: 295px;
 }
 
 .group-message h3{
@@ -231,8 +232,8 @@ main{
   object-position: center;
   vertical-align: middle;
   display: inline-block;
-  width: 35px;
-  height: 35px;
+  width: 30px;
+  height: 30px;
   margin-right: 8px;
   border-radius: 50%;
   background-image: url(./assets/hacker.jpg);
@@ -407,4 +408,14 @@ audio{
   background-color: var(--botMessageBackground);
   max-width: 250px;
   padding: 5px;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
